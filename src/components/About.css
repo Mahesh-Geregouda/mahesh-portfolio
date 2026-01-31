@@ -1,17 +1,17 @@
 .about {
-  padding: 6rem 0;
-  background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+  padding: 7rem 0;
+  background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(15, 15, 25, 1) 100%);
+  position: relative;
 }
 
-.section-title {
-  font-size: 3rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 4rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
 }
 
 .about-content {
@@ -20,84 +20,134 @@
 }
 
 .about-intro {
-  font-size: 1.3rem;
-  line-height: 1.8;
-  color: #d0d0d0;
-  margin-bottom: 3rem;
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 3.5rem;
   text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 4rem;
 }
 
 .detail-item {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-card);
   padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-smooth);
 }
 
 .detail-item:hover {
-  transform: translateY(-5px);
-  border-color: rgba(102, 126, 234, 0.5);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+  transform: translateY(-6px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+  background: var(--bg-card-hover);
+}
+
+.detail-item:hover::before {
+  transform: scaleX(1);
 }
 
 .detail-item h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   margin-bottom: 1rem;
-  color: #667eea;
+  color: var(--primary-light);
+  font-weight: 600;
 }
 
 .detail-item p {
-  color: #b0b0b0;
-  line-height: 1.7;
+  color: var(--text-secondary);
+  line-height: 1.8;
 }
 
 .about-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 3rem;
 }
 
 .stat {
   text-align: center;
-  padding: 2rem;
-  background: rgba(102, 126, 234, 0.1);
-  border-radius: 12px;
-  border: 1px solid rgba(102, 126, 234, 0.2);
-  transition: all 0.3s ease;
+  padding: 2.5rem 2rem;
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-subtle);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
 }
 
 .stat:hover {
-  transform: scale(1.05);
-  background: rgba(102, 126, 234, 0.15);
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.stat:hover::after {
+  opacity: 1;
 }
 
 .stat-number {
-  font-size: 3rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.02em;
 }
 
 .stat-label {
-  color: #b0b0b0;
+  color: var(--text-secondary);
   font-size: 1rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
+  .about {
+    padding: 5rem 0;
+  }
+
   .section-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   .about-intro {
@@ -112,9 +162,8 @@
   .about-stats {
     grid-template-columns: 1fr;
   }
+
+  .stat-number {
+    font-size: 2.75rem;
+  }
 }
-
-
-
-
-

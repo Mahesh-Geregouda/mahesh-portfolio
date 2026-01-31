@@ -2,6 +2,7 @@
   "name": "mahesh-portfolio",
   "version": "1.0.0",
   "description": "Personal portfolio website for Data Analyst and Data Engineer roles",
+  "homepage": "https://mahesh-geregouda.github.io/mahesh-portfolio",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
@@ -19,7 +20,6 @@
       "react-app"
     ]
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",
@@ -33,4 +33,3 @@
     ]
   }
 }
-

@@ -1,15 +1,15 @@
 .experience {
-  padding: 6rem 0;
-  background: #0a0a0a;
+  padding: 7rem 0;
+  background: var(--bg-dark);
+  position: relative;
 }
 
 .experience-timeline {
   max-width: 900px;
   margin: 0 auto;
   position: relative;
-  padding-left: 2rem;
+  padding-left: 2.5rem;
 }
-
 
 .experience-timeline::before {
   content: '';
@@ -18,7 +18,8 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+  border-radius: 1px;
 }
 
 .timeline-item {
@@ -27,30 +28,55 @@
   padding-left: 3rem;
 }
 
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
 .timeline-marker {
   position: absolute;
   left: -1.5rem;
-  top: 0.5rem;
-  width: 12px;
-  height: 12px;
+  top: 0.75rem;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: 3px solid #0a0a0a;
+  background: var(--gradient-primary);
+  border: 3px solid var(--bg-dark);
   z-index: 1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  transition: all var(--transition-smooth);
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.3), var(--shadow-glow);
 }
 
 .timeline-content {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
   padding: 2rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 1rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 12px 8px 0;
+  border-color: transparent var(--border-subtle) transparent transparent;
 }
 
 .timeline-content:hover {
-  transform: translateX(10px);
-  border-color: rgba(102, 126, 234, 0.5);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+  transform: translateX(8px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+  background: var(--bg-card-hover);
 }
 
 .experience-header {
@@ -63,16 +89,17 @@
 }
 
 .experience-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #e0e0e0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
   margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
 }
 
 .experience-company {
   font-size: 1.1rem;
-  color: #667eea;
-  font-weight: 500;
+  color: var(--primary-light);
+  font-weight: 600;
 }
 
 .experience-meta {
@@ -83,51 +110,66 @@
 }
 
 .experience-period {
-  color: #888;
+  color: var(--text-muted);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .experience-location {
-  color: #b0b0b0;
+  color: var(--text-secondary);
   font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .experience-type {
   display: inline-block;
   padding: 0.4rem 1rem;
-  background: rgba(102, 126, 234, 0.2);
-  color: #667eea;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary-light);
+  border-radius: 25px;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .experience-description {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .experience-description li {
-  color: #b0b0b0;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
   position: relative;
+}
+
+.experience-description li:last-child {
+  margin-bottom: 0;
 }
 
 .experience-description li::before {
   content: '▹';
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: var(--primary);
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
+  .experience {
+    padding: 5rem 0;
+  }
+
   .experience-timeline {
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
   }
 
   .timeline-item {
@@ -136,6 +178,8 @@
 
   .timeline-marker {
     left: -1rem;
+    width: 12px;
+    height: 12px;
   }
 
   .experience-header {
@@ -145,5 +189,8 @@
   .experience-meta {
     align-items: flex-start;
   }
-}
 
+  .timeline-content::before {
+    display: none;
+  }
+}

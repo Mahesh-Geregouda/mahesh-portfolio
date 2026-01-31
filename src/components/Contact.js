@@ -37,15 +37,15 @@ const Contact = () => {
               <div className="info-icon">📧</div>
               <div>
                 <h3>Email</h3>
-                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                <a href="mailto:mahesh.shivakumar06@gmail.com">mahesh.shivakumar06@gmail.com</a>
               </div>
             </div>
             <div className="info-item">
               <div className="info-icon">💼</div>
               <div>
                 <h3>LinkedIn</h3>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  linkedin.com/in/yourprofile
+                <a href="https://www.linkedin.com/in/mahesh-g-6bb701203/" target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/mahesh-g-6bb701203
                 </a>
               </div>
             </div>
@@ -53,8 +53,8 @@ const Contact = () => {
               <div className="info-icon">💻</div>
               <div>
                 <h3>GitHub</h3>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                  github.com/yourusername
+                <a href="https://github.com/Mahesh-Geregouda" target="_blank" rel="noopener noreferrer">
+                  github.com/Mahesh-Geregouda
                 </a>
               </div>
             </div>
@@ -62,7 +62,7 @@ const Contact = () => {
               <div className="info-icon">📍</div>
               <div>
                 <h3>Location</h3>
-                <p>Available for remote work worldwide</p>
+                <p>Bangalore, Karnataka</p>
               </div>
             </div>
           </div>
