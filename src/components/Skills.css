@@ -1,0 +1,118 @@
+.skills {
+  padding: 6rem 0;
+  background: #0a0a0a;
+}
+
+.skills-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-category {
+  margin-bottom: 4rem;
+}
+
+.category-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+.skill-percentage {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: width 1s ease;
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skill-tag {
+  padding: 0.75rem 1.5rem;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 25px;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.5);
+  color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+}
+
