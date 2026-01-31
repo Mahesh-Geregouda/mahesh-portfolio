@@ -29,6 +29,7 @@ const Experience = () => {
       ],
       type: 'Data Analysis'
     },
+    
     {
       title: 'Junior Data Analyst',
       company: 'Data Insights Ltd',

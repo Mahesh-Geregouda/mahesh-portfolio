@@ -24,6 +24,7 @@ const Skills = () => {
     { name: 'ETL/ELT', level: 90 },
   ];
 
+  
   const otherSkills = [
     'Git', 'Linux', 'CI/CD', 'Kubernetes', 'MongoDB', 'Redis',
     'Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', 'Jupyter',

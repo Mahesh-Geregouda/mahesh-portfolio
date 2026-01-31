@@ -10,6 +10,7 @@
   padding-left: 2rem;
 }
 
+
 .experience-timeline::before {
   content: '';
   position: absolute;

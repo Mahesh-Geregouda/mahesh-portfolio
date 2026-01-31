@@ -17,6 +17,7 @@ const Projects = () => {
       technologies: ['Apache Airflow', 'AWS', 'Snowflake', 'Python', 'Docker'],
       image: '⚙️',
     },
+    
     {
       title: 'Customer Churn Prediction Model',
       category: 'Data Analysis',
